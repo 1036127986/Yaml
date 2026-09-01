@@ -166,9 +166,9 @@ proxy-groups:
 
 # ███████████████████████████ 规则匹配 ███████████████████████████
 rules:
-  - AND,((NETWORK,UDP),(DST-PORT,443),(NOT,((OR,((RULE-SET,cn_domain),(RULE-SET,cn_ip,no-resolve)))))),REJECT
   - DOMAIN-SUFFIX,schwab.com,国内直连                                   #schwab嘉信理财
   - DOMAIN-SUFFIX,thinkorswim.com,国内直连                              #thinkorswim 
+  - AND,((NETWORK,UDP),(DST-PORT,443),(NOT,((OR,((RULE-SET,cn_domain),(RULE-SET,cn_ip,no-resolve)))))),REJECT
   - RULE-SET,private_domain,国内直连                                    # Private
   - RULE-SET,private_ip,国内直连,no-resolve                             # Private
   - RULE-SET,games@cn_domain,国内直连                                   # 游戏直连 
